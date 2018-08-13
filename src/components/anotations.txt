@@ -1,0 +1,28 @@
+Hay 2 tipos de componentes
+- Functional Component
+    
+- Class Component 
+    / Ciclo de Vida, Estados 
+    / Hay que importartlo de { Component } from 'react'
+
+
+// Voy en el video  - empezando
+
+Api key OpenWeatherMap  / Industrys Afh -> fe68d1607c7047f951d177d05e251514
+const url_apiWeather = `api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
+
+
+Comunicación entre componentes
+
+Burbujeo de acciones
+url
+Redux
+
+Ojo! El this.setState dispara una nueva renderizacion
+
+
+// Hooks
+
+constructor () { }  -> Establece el state , se ejecuta de primero.
+render () { }       -> Renderiza HTML incrustado.
+
