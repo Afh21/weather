@@ -6,8 +6,6 @@ Hay 2 tipos de componentes
     / Hay que importartlo de { Component } from 'react'
 
 
-// Voy en el video  - empezando
-
 Api key OpenWeatherMap  / Industrys Afh -> fe68d1607c7047f951d177d05e251514
 const url_apiWeather = `api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
 
@@ -23,6 +21,93 @@ Ojo! El this.setState dispara una nueva renderizacion
 
 // Hooks
 
-constructor () { }  -> Establece el state , se ejecuta de primero.
-render () { }       -> Renderiza HTML incrustado.
+Mounting (Montado)
+
+    constructor () {  }  -> Establece el state , se ejecuta de primero.
+
+        componentWillMount
+
+    render () { }       -> Renderiza HTML incrustado.
+
+        componentDidMount
+    
+Update (Actualización)
+
+    componentWillReceiveProps(nextProps)
+
+    shouldComponentUpdate(return true/false)
+
+    componentWillUpdate()
+
+    render()
+
+    componentDidUpdate()
+
+Otras
+
+    componentWillUnmount()
+
+Error Handling
+
+    componentDidCath(err)
+
+
+
+// Actualizacion de Componente
+
+setState: Establece el "state"
+Props
+forceUpdate
+
+
+    OneWayData Flow -> Un solo sentido de los datos
+
+        Estado Inicial -> Virtual DOM -> DOM real -> Cambio Estado -> Virtual DOM -> Reconciliation (Comparacion entre 1 y 2 Virtual DOM) -> Actualiza solo lo necesario del DOM 
+
+    OneWayData Flow (Descendente)
+
+        Parent 
+            Child 1     Child 2
+                child1.1    Child2.1
+
+    Reconciliation
+
+        Hace un proceso de revisa cambios en los componentes en el DOM Virtual.
+        ¿Cuando se detecta un cambio?
+
+        1. Cambio de tipo de elemento.
+        2. Cambio de atributos dentro de elementos del mismo tipo.
+        3. Recorre lista de elementos hijos comparando por clave.
+
+
+    Reconciliation y ShouldComponentUpdate
+
+
+    React Fiber -> Renderización { Investigar }
+    " Nuevo por dentro / Igual por afuera " -> Renderizado incremental.
+
+
+    Single Page Application vs Multiple Pages Application (Model View Controller)
+
+    Redux = Estado de la Aplicacion
+
+        - El estado es unico y global (Store)
+        - El estado se modifica por acciones (action); establece una copia del estado actual
+        - El estado es inmutable, el estado es unico, lo que se hacen son copias.
+
+
+
+Video # 103. - Iniciando
+
+Package Installed
+
+# npm install --save moment
+# npm install --save redux 
+# npm install --save react-redux 
+
+
+
+
+
+
 
