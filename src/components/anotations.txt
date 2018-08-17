@@ -97,16 +97,41 @@ forceUpdate
 
 
 
-Video # 103. - Iniciando
+Video # . - Iniciando
 
 Package Installed
 
+# npm install --save react-icons-weather
 # npm install --save moment
 # npm install --save redux 
 # npm install --save react-redux 
 
 
+Smart Components (Containers) 
+    // Tiene acceso al estado de la aplicacion a traves del connect 
+    vs 
+Dumb Components (Presentational Components)
+    // Solo tienen logica de presentacion
 
+
+Ojo! Las transiciones del estado de la aplicacion se hacen a través de las actions
+
+Reducers:
+"Funciones puras":  Depende de los parametros que le estamos dando, 
+                    el retorno de la funcion solamente de los valores que le pasamos,
+                    no depende de ningun valor externo.
+                    No debemos alterar los valores que le pasemos.
+
+                    No alterar estado!
+                        state.prop = 'New Value'
+                    Hacer copia
+                        { ..state, prop: 'New Value2'}
+
+
+
+connect(1, 2)(component)
+1-> MapStateToProps(values)  -> Va a permitir alterar el estado de la App
+2-> MapDispatchToProps(func) -> 
 
 
 

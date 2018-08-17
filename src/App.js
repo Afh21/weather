@@ -1,44 +1,40 @@
 import React, { Component } from 'react';
+// connect() permite conectar a los componentes que necesite el acceso al store
+// import { connect } from 'eact-redux';
 import './App.css';
-import LocationList from './components/LocationList';
 import { Row, Col, Menu, Icon } from 'antd';
-import ForecastExtended from './components/ForecastExtended';
 
-  const cities = [
-    'Bogota,co',
-    'La Dorada,co',
-    'Honda,co',
-    'Puerto Salgar,co'
-  ];
+import LocationListContainer from './containers/LocationListContainer';
+import ForecastExtendedContainer from './containers/ForecastExtendedContainer';
+
+
+// Carpeta actions
+// import { setCity } from './actions/index';
+
+// Carpeta store
+// import { store } from './store/index';
+
+// Un action es simplemente un objeto identificado por un type: y un value:
+// const setCity = value => ({ type: 'setCity', value });
 
   const SubMenu = Menu.SubMenu;
   const MenuItemGroup = Menu.ItemGroup;    
+
+// =============================================================== //
+
+const cities = [ 'Bogota,co', 'La Dorada,co', 'Honda,co', 'Puerto Salgar,co' ];
 
 class App extends Component {
 
   constructor() {
     super();
-
-    this.state = {
-      city: null,
-      current: 'mail'
-    }
+    this.state = { current: 'mail' }
   }
 
-  handleSelectionLocation = city => {
-    this.setState({ city });    
-  } 
-    
-  handleClick = (e) => {    
+  // Metodo que establecer la propiedad current para el Menú.
+  handleClick = (e) => { this.setState({ current: e.key }) }
 
-    this.setState({
-      current: e.key,
-    });
-  }
-
-  render() {
-
-    const { city } = this.state;
+  render() {    
 
     return (
       <div>
@@ -76,12 +72,12 @@ class App extends Component {
         <Row>
           <Col span={12}>
             <div className="App">
-              <LocationList cities={cities} onSelectedLocation={ this.handleSelectionLocation }></LocationList>
+              <LocationListContainer cities={cities}></LocationListContainer>
             </div>          
           </Col>  
           <Col span={12}>
             <div className="detail">               
-              { !city ? <h1>Nothing City</h1> : <ForecastExtended city={ city }></ForecastExtended> }
+              <ForecastExtendedContainer ></ForecastExtendedContainer>
             </div>          
           </Col>       
         </Row>        

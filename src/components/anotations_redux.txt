@@ -1,0 +1,77 @@
+React-Redux:
+    "se podría traducir como contenedor de estados predecibles para aplicaciones javascript."
+
+Los 3 principios de Redux:
+
+ #1 - Una sola fuente de datos: 
+    El estado de la aplicación se almacena en un árbol de objetos dentro de un único STORE.
+
+ #2 - El estado es sólo de lectura:
+    La única manera que tenemos de cambiar el estado será mediante ACTIONS. 
+    Así nos aseguramos que la vista nunca modifica el estado, sino que expresa su intención de mutar.
+
+ #3 - Las mutaciones se escriben como funciones puras: 
+    Para especificar como cambiará el estado por las acciones, se utilizan los REDUCERS, 
+    que son funciones puras a las que pasamos el estado anterior y la acción a realizar 
+    devolviendo un nuevo estado de la aplicación, en lugar de modificar el estado anterior.
+
+
+// Conceptos necesarios
+
+ACTIONS: 
+    El estado de nuestra aplicación sólo cambiará si ejecutamos un action.
+    Un action es un simple objeto plano de javascript que describe un cambio.
+    Así como el state es la mínima representación de los datos de nuestra app, 
+    el action es la mínima representación del cambio en los datos.
+
+    Cualquier action deberá tener siempre una propiedad type, cuyo valor sea diferente a undefined.
+    Cada app, tendrá definidas sus propios actions para describir los cambios en el estado de sus datos.
+
+STORE:
+    El store contiene los 3 principios de redux. Será el centro de nuestra aplicación 
+    ya que con él, conoceremos el estado actual de la aplicación y nos permitirá ejecutar actions 
+    que modifiquen nuestro estado.
+
+    Para poder crear un store, necesitamos pasarle un reducer con la lógica de los cambios. 
+    Si nos fijamos, el reducer que le pasaremos, será la única información que necesitaremos 
+    que Redux conozca de nuestra aplicación. El resto, lo crearemos nosotros.
+
+    Esto es muy diferente a los marcos que propone un framework, y hace que nuestro código sea
+    altamente portable, pudiendo usar sin restricciones programación funcional.
+
+    # Metodos del store
+        El store tiene 3 métodos importantes.
+
+        getState() : Devuelve el state actual del store.
+        dispatch() : El más común. Dispara actions para cambiar el state.
+        subscribe(): Es un callback que será llamado con cada dispacth, haciendo que tengamos 
+                     disponible y actualizado el método getState.
+
+
+
+
+FUNCIONES PURAS E IMPURAS:
+    Es importante conocer esta distinción ya que algunas de las funciones que vamos a escribir
+    en redux son puras y es necesario que lo sean.
+
+    # FUNCIONES PURAS
+        Son las que su valor retornado, depende exclusivamente de sus argumentos. 
+        Nunca cambian ó modifican el valor de sus argumentos y su comportamiento es 
+        fácilmente predecible y testeable.
+
+    # FUNCIONES IMPURAS        
+        Por el contrario, estas funciones modifican los datos que se les pasan como argumentos.
+
+
+LA FUNCION REDUCTORA O REDUCER
+    El reducer es la función que tiene toda aplicación de redux, con la que se entrega siempre un nuevo estado 
+    de los datos, pasando como parámetros el state previo y el action a ejecutar.
+
+    Siempre que pasásemos como parámetro de la action, un valor que no estuviera definido, devolveríamos el mismo
+    state que se entregó y si el state es undefined, devolveremos cero.
+
+
+
+
+
+
