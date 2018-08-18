@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { Row, Col, Menu, Icon } from 'antd';
 
-import LocationListContainer from './containers/LocationListContainer';
-import ForecastExtendedContainer from './containers/ForecastExtendedContainer';
+import LocationListContainer from './redux/containers/LocationListContainer';
+import ForecastExtendedContainer from './redux/containers/ForecastExtendedContainer';
 
 
 // Carpeta actions

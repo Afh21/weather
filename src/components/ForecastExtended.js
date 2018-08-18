@@ -3,14 +3,9 @@ import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem/index';
 import { Spin } from 'antd';
 import transformForecast from '../services/transformForcast';
-/*
-const days = [ 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes' ]
-const data = { temperature: 12.65, humidity: 10, icon: "800", wind: `${10} mt/s` }
-*/
 
 const api_key = "fe68d1607c7047f951d177d05e251514";
 const url     = `http://api.openweathermap.org/data/2.5/forecast`;
-
 
 class ForecastExtended extends Component {
 
@@ -53,7 +48,7 @@ class ForecastExtended extends Component {
                 // transformForecast es una funcion creada en la carpeta /services 
                 const forecastData = transformForecast(weather_data);
                 console.log(forecastData);  // Trasnformacion realizada de lso datos en el services.
-                // this.setState({ forecastData })
+                this.setState({ forecastData })
 
                 // Modificar el estado con el resultado de la promise (fetch)
                 //dispatch(setForcastData({ city: payload, forecastData }));

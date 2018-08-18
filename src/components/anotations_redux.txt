@@ -72,6 +72,13 @@ LA FUNCION REDUCTORA O REDUCER
 
 
 
+FLUX -> Multiples STORE.
+    Los datos del store solo deben modificarse en respuesta de una action.
 
+    # Data Flow: "Flujo de datos estrictamente unidireccional".
+    # Unidirectional Data Flow: Hace la logica de la aplicacion mas predecible y mas facil de entender.
 
+Single Source Of Truth: SSOT -> Un solo STORE.
+
+Action Creator (Container) -> 
 

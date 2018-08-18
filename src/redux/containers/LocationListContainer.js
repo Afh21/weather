@@ -2,35 +2,23 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setSelectedCity } from '../actions/index';
-import LocationList from '../components/LocationList';
+import LocationList from './../../components/LocationList';
 
 
 class LocationListsContainer extends Component {
 
-    handleSelectionLocation = city => {
-        // this.setState({ city });    
-        
-        // dispatch() pasa una action
-        //store.dispatch(setCity(city))
-        this.props.setCityProp(city);
-        console.log("handleSelectionLocation" ,city)
-    } 
-    
-    // Video 125 
+    handleSelectionLocation = city => { this.props.setCityProp(city) }     
 
     render() {
         return (
         <div>
-            <LocationList 
-                cities={this.props.cities} 
-                onSelectedLocation={ this.handleSelectionLocation }>
-            </LocationList>
+            <LocationList cities={this.props.cities} onSelectedLocation={ this.handleSelectionLocation }> </LocationList>
         </div>
         )
     }
 }
 
-
+// Validador de Propiedades
 LocationListsContainer.propTypes = {
     setCityProp: PropTypes.func.isRequired,
     cities: PropTypes.array.isRequired

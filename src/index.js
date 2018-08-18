@@ -6,7 +6,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 
-import { store } from './store';
+import { store } from './redux/store';
 
 // Framework Antd.Design
 import 'antd/dist/antd.min.css';
